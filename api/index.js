@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 var morgan = require('morgan');
+const user = require('./src/routes/userRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -25,8 +26,25 @@ app.get('/', (req,res)=>{
     res.send('Server running on port '+PORT)
 });
 
+// public routes
+app.use('/api/v1/', user);
+
+// handle 404 error
+app.use(function (req, res, next) {
+    let err = new Error("Not Found");
+    err.status = 404;
+    next(err);
+});
+
+// handle errors
+app.use(function (err, req, res, next) {
+
+    if (err.status === 404) res.status(404).json({status: "Not found"});
+    else res.status(500).json({status: "Something looks wrong"});
+});
+
 app.listen(PORT, ()=>{
     console.log('Server is running on port '+PORT)
 });
 
-module.exports = app
+module.exports = app;
