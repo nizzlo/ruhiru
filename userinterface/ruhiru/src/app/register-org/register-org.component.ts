@@ -9,7 +9,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegisterOrgComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  private access : Boolean;
+
+  constructor(private http:HttpClient) { 
+    this.access = false;
+  }
 
   RegForm = new FormGroup({
     Name: new FormControl(''),
@@ -21,26 +25,42 @@ export class RegisterOrgComponent implements OnInit {
   });
 
   onSubmit() {
-    var name = this.RegForm.get("Name").value;
-    var email = this.RegForm.get("email").value;
-    var address = this.RegForm.get("address").value;
-    var password = this.RegForm.get("Password1").value;
-    var contact = this.RegForm.get("ContactNo").value;
-    let regData = {
-      "name":name,
-      "email":email,
-      "address":address,
-      "contact":contact,
-      "password":password
-    }
-    var url="https://d9edc04fdbc6.ngrok.io/api/v1/user/organization"
+    if(this.access == true){
+      var name = this.RegForm.get("Name").value;
+      var email = this.RegForm.get("email").value;
+      var address = this.RegForm.get("address").value;
+      var password = this.RegForm.get("Password1").value;
+      var contact = this.RegForm.get("ContactNo").value;
+      let regData = {
+        "name":name,
+        "email":email,
+        "address":address,
+        "contact":contact,
+        "password":password
+      }
+      var url="https://d9edc04fdbc6.ngrok.io/api/v1/user/organization"
 
-    this.http.post<any>(url,regData).subscribe(data =>{
-      console.log(data);
-    });
+      this.http.post<any>(url,regData).subscribe(data =>{
+        console.log(data);
+      });
+    }
+    else{
+      alert("Password Mismatch");
+    }
   }
 
   ngOnInit(): void {
   }
 
+  onSearchChange(searchValue: string): void {  
+    if(searchValue == this.RegForm.get("Password1").value){
+      document.getElementById("test").style.borderColor = "#EBE9ED";
+      var element = (<HTMLInputElement>document.getElementById("submit")).disabled = false;
+      this.access = true;
+    }
+    else{
+      document.getElementById("test").style.borderColor = "red";
+      var element = (<HTMLInputElement>document.getElementById("submit")).disabled = true;
+    }
+  }
 }
