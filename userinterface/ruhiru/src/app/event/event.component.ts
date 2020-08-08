@@ -20,7 +20,7 @@ interface event { //creates the car interface.
 })
 export class EventComponent implements OnInit {
   events: event[] = [];   
-  constructor(private http: HttpClient  ) { }
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     localStorage.clear();

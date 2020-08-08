@@ -19,6 +19,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EventComponent } from './event/event.component';
+import { CreateEventComponent } from './create-event/create-event.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EventComponent } from './event/event.component';
     LoginComponent,
     RegisterComponent,
     RegisterOrgComponent,
-    EventComponent
+    EventComponent,
+    CreateEventComponent
   ],
 
   imports: [
