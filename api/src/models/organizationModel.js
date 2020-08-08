@@ -17,7 +17,15 @@ const OrgSchema = mongoose.Schema({
     contact: {
         type: String
     },
+    password: {
+        type: String,
+        required: true,
+    },
+    type: {
+        type: String,
+        default: 'org'
+    }
 }, { timestamps: true });
 
 
-module.exports = mongoose.model("Organization",OrgSchema);
+module.exports = mongoose.model("Organization",OrgSchema,'users');
