@@ -4,12 +4,14 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterOrgComponent } from './register-org/register-org.component';
 import { ProfileComponent } from './profile/profile.component';
+import {EventComponent} from './event/event.component'
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'registerOrg', component: RegisterOrgComponent },
-  { path: 'profile', component: ProfileComponent }
+  { path: 'profile', component: ProfileComponent },
+  { path: 'event', component: EventComponent }
 ];
 
 @NgModule({
