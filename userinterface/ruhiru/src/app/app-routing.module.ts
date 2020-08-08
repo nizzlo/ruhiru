@@ -7,6 +7,8 @@ import { ProfileComponent } from './profile/profile.component';
 import {EventComponent} from './event/event.component'
 import {CreateEventComponent} from './create-event/create-event.component'
 import { YourGuardGuard } from './your-guard.guard';
+import { DeleteEventComponent } from './delete-event/delete-event.component';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,7 +17,8 @@ const routes: Routes = [
   { path: 'registerOrg', component: RegisterOrgComponent },
   { path: 'event', component: EventComponent ,canActivate: [YourGuardGuard]},
   { path: 'createevent', component: CreateEventComponent ,canActivate: [YourGuardGuard]},
-  { path: 'profile', component: ProfileComponent,canActivate: [YourGuardGuard] }
+  { path: 'profile', component: ProfileComponent,canActivate: [YourGuardGuard] },
+  { path: 'manage', component: DeleteEventComponent,canActivate: [YourGuardGuard] }
 ];
 
 @NgModule({

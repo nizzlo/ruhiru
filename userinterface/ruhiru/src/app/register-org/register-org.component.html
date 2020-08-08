@@ -6,8 +6,8 @@
     Contact No :  <input type="text" formControlName="ContactNo" required> <br> 
     Address :  <input type="textarea" formControlName="address" required> <br> 
     Password :  <input type="password" formControlName="Password1" required> <br>
-    Confirm Password :  <input type="password" formControlName="password2" id = "passwordConf" required> <br>
-    <input type="submit"> 
+    Confirm Password :  <input type="password" formControlName="password2" (input)="onSearchChange($event.target.value)" id="test" required> <br>
+    <input type="submit" id="submit" [disabled]="!RegForm.valid"> 
     <input type="Reset">
 </form>
 

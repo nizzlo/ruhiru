@@ -3,11 +3,11 @@
 <form [formGroup]="RegForm" (ngSubmit)="onSubmit()">
     First Name :  <input type="text" formControlName="fName" required> <br>
     Last Name :  <input type="text" formControlName="lName" required> <br>
-    Email :  <input type="email" formControlName="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" requied> <br>
+    Email :  <input type="email" formControlName="email" required> <br>
     Contact No :  <input type="text" formControlName="ContactNo" required> <br> 
     Password :  <input type="password" formControlName="Password1" required> <br>
-    Confirm Password :  <input type="password" formControlName="password2" id = "passwordConf" required> <br>
-    <input type="submit"> 
+    Confirm Password :  <input type="password" formControlName="password2" (input)="onSearchChange($event.target.value)" id="test" required> <br>
+    <input type="submit" id="submit" [disabled]="!RegForm.valid"> 
     <input type="Reset">
 </form>
 
