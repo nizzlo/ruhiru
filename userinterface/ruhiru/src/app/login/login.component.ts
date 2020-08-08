@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router: Router ) { }
 
   loginForm = new FormGroup({
     email: new FormControl(''),
@@ -52,6 +54,8 @@ export class LoginComponent implements OnInit {
       console.log(data.user.profile.location);
       localStorage.setItem('location', data.user.profile.location);
       console.log(data);
+
+      this.router.navigate(['/profile']);
     },error =>{
       alert("Unauthorized Access, try again.")
     });

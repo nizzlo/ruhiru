@@ -18,13 +18,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    RegisterOrgComponent
+    RegisterOrgComponent,
+    ProfileComponent
   ],
 
   imports: [
