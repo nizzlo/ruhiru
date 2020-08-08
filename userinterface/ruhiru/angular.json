@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ruhiru"
+    }
+  },
+  "defaultProject": "ruhiru",
+  "cli": {
+    "analytics": "ad2843c9-ea5e-4f04-942b-23de00ccb28d"
+  }
 }
