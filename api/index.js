@@ -2,12 +2,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 var morgan = require('morgan');
+var cors = require('cors')
 const user = require('./src/routes/userRoutes');
 const event = require('./src/routes/eventRoutes');
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.SERVER_PORT;
+
+// enable cors
+app.use(cors())
 
 // mongoose connection
 mongoose.Promise = global.Promise;
