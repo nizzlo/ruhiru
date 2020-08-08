@@ -40,7 +40,7 @@ export class CreateEventComponent implements OnInit {
     var url="https://d9edc04fdbc6.ngrok.io/api/v1/event"
     
     let headers = new HttpHeaders({
-      'Authorization': localStorage.getItem('accessToken'),
+      'Authorization': "JWT "+localStorage.getItem('accessToken'),
     });
 
     let options = { headers: headers };

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { interval } from 'rxjs';
+
 interface event { //creates the car interface.
   name: string;
   location: string;
@@ -23,7 +23,7 @@ export class EventComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    localStorage.clear();
+  
     this.getEvents();
   }
   private getEvents(){ //http get request.
