@@ -1,9 +1,8 @@
 <mat-toolbar>
   <span>Ruhiru</span>
   <mat-toolbar-row>
-    <span><button mat-button color="primary"><a routerLink="/login" routerLinkActive="active">Login</a></button></span>
-    <span><button mat-button color="primary"><a routerLink="/register" routerLinkActive="active">Sign-up</a></button></span>
-    <span><button mat-button color="primary"><a routerLink="/login" routerLinkActive="active">Profile</a></button></span>
+    <a routerLink="/login" routerLinkActive="active"><span><button mat-button color="primary">Login</button></span></a>
+    <a routerLink="/register" routerLinkActive="active"><span><button mat-button color="primary">Sign-up</button></span></a>
   </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>

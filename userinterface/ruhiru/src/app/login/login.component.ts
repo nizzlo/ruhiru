@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
 
     this.http.post<any>(url,loginData).subscribe(data =>{
       console.log(data);
+      console.log(data);
     });
   }
 
