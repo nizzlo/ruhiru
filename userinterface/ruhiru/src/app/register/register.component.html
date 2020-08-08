@@ -1,12 +1,12 @@
 <H1>User Registration</H1>
 <br>
 <form [formGroup]="RegForm" (ngSubmit)="onSubmit()">
-    First Name :  <input type="text" formControlName="fName"> <br>
-    Last Name :  <input type="text" formControlName="lName"> <br>
-    Email :  <input type="email" formControlName="email"> <br>
-    Contact No :  <input type="text" formControlName="ContactNo"> <br> 
-    Password :  <input type="password" formControlName="Password1"> <br>
-    Confirm Password :  <input type="password" formControlName="password2"> <br>
+    First Name :  <input type="text" formControlName="fName" required> <br>
+    Last Name :  <input type="text" formControlName="lName" required> <br>
+    Email :  <input type="email" formControlName="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" requied> <br>
+    Contact No :  <input type="text" formControlName="ContactNo" required> <br> 
+    Password :  <input type="password" formControlName="Password1" required> <br>
+    Confirm Password :  <input type="password" formControlName="password2" id = "passwordConf" required> <br>
     <input type="submit"> 
     <input type="Reset">
 </form>

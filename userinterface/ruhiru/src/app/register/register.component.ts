@@ -8,7 +8,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  private access : Boolean;
+
+  constructor(private http:HttpClient) {
+     this.access = false;
+   }
+
+  
 
   RegForm = new FormGroup({
     fName: new FormControl(''),
@@ -29,7 +35,6 @@ export class RegisterComponent implements OnInit {
       "firstName":fname,
       "lastName":lname,
       "email":email,
-
       "password":password,
       "contact":contact
     }
@@ -43,4 +48,12 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSearchChange(searchValue: string): void {  
+    if(searchValue == this.RegForm.get("Password1").get.toString()){
+      this.access = true;
+    }
+    else{
+      document.getElementById("passwordConf").style.borderColor = "red";
+    }
+  }
 }
