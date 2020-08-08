@@ -5,6 +5,7 @@ var morgan = require('morgan');
 var cors = require('cors')
 const user = require('./src/routes/userRoutes');
 const event = require('./src/routes/eventRoutes');
+const org = require('./src/routes/organizationRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -34,6 +35,7 @@ app.get('/', (req,res)=>{
 // public routes
 app.use('/api/v1/', user);
 app.use('/api/v1/', event);
+app.use('/api/v1/', org);
 
 // handle 404 error
 app.use(function (req, res, next) {
