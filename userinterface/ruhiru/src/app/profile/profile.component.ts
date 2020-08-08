@@ -29,7 +29,9 @@ export class ProfileComponent implements OnInit {
 
 
   ngOnInit(): void {
-      
+    // if(localStorage.getItem('accessToken')==null){
+    //   this.router.navigate(['/login']);
+    // }
   }
 
   logout(){
