@@ -1,0 +1,15 @@
+<p>create-event works!</p>
+
+<br>
+<form [formGroup]="EventForm" (ngSubmit)="onSubmit()">
+    Name :  <input type="text" formControlName="name"> <br>
+    Location :  <input type="text" formControlName="location"> <br>
+    Organizer :  <input type="email" formControlName="organizer"> <br>
+    Description :  <input type="text" formControlName="description"> <br> 
+    Start Time :  <input type="password" formControlName="startTime"> <br>
+    End Time :  <input type="password" formControlName="endTime"> <br>
+ 
+    <input type="submit"> 
+    <input type="Reset">
+</form>
+
