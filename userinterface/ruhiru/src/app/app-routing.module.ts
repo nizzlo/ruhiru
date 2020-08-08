@@ -13,10 +13,9 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'registerOrg', component: RegisterOrgComponent },
-  { path: 'event', component: EventComponent },
-  { path: 'createevent', component: CreateEventComponent },
-  { path: 'profile', component: ProfileComponent,canActivate: [YourGuardGuard], },
-  { path: 'event', component: EventComponent }
+  { path: 'event', component: EventComponent ,canActivate: [YourGuardGuard]},
+  { path: 'createevent', component: CreateEventComponent ,canActivate: [YourGuardGuard]},
+  { path: 'profile', component: ProfileComponent,canActivate: [YourGuardGuard] }
 ];
 
 @NgModule({
