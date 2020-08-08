@@ -34,6 +34,7 @@ module.exports = {
                     return res.json({
                         user,
                         accessToken: jwt.sign({
+                            id:user._id,
                             email: user.email
                         }, process.env.JWT_SECRET)
                     });
