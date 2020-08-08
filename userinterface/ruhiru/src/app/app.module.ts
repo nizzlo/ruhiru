@@ -13,6 +13,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { RegisterComponent } from './register/register.component';
 import { RegisterOrgComponent } from './register-org/register-org.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,12 @@ import { RegisterOrgComponent } from './register-org/register-org.component';
 
     MatSliderModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+
+    ReactiveFormsModule,
+    HttpClientModule
+    
   ],
 
   providers: [],
