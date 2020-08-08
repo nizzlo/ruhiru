@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { EventComponent } from './event/event.component';
 import { CreateEventComponent } from './create-event/create-event.component';
+import { DeleteEventComponent } from './delete-event/delete-event.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CreateEventComponent } from './create-event/create-event.component';
     EventComponent,
     CreateEventComponent,
     ProfileComponent,
-    EventComponent
+    EventComponent,
+    DeleteEventComponent
   ],
 
   imports: [

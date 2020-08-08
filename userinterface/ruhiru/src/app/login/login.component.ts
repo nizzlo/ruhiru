@@ -45,14 +45,14 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('firstName', data.user.firstName);
       console.log(data.user.lastName);
       localStorage.setItem('lastName', data.user.lastName);
-      console.log(data.user.profile.bloodgroup);
-      localStorage.setItem('bloodgroup', data.user.profile.bloodgroup);
-      console.log(data.user.profile.points);
-      localStorage.setItem('points', data.user.profile.points);
+      //console.log(data.user.profile.bloodgroup);
+      //localStorage.setItem('bloodgroup', data.user.profile.bloodgroup);
+      //console.log(data.user.profile.points);
+      //localStorage.setItem('points', data.user.profile.points);
       console.log(data.accessToken);
       localStorage.setItem('accessToken', data.accessToken);
-      console.log(data.user.profile.location);
-      localStorage.setItem('location', data.user.profile.location);
+      //console.log(data.user.profile.location);
+      //localStorage.setItem('location', data.user.profile.location);
       console.log(data);
 
       this.router.navigate(['/profile']);
