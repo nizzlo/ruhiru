@@ -43,6 +43,7 @@ export class RegisterOrgComponent implements OnInit {
 
       this.http.post<any>(url,regData).subscribe(data =>{
         console.log(data);
+        alert("Registration successful")
       });
     }
   }
