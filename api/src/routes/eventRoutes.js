@@ -6,6 +6,6 @@ const eventController = require('../controllers/eventControllers');
 router.post('/event', userController.loginRequired, eventController.addEvent);
 router.get('/event', eventController.listEvent);
 router.get('/user/event', userController.loginRequired, eventController.filterEvent);
-router.delete('/event/:id', userController.loginRequired, eventController.deleteEvent);
+router.delete('/event', userController.loginRequired, eventController.deleteEvent);
 
 module.exports = router;

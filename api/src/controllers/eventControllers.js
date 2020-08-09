@@ -32,7 +32,7 @@ module.exports = {
 
     deleteEvent: function(req, res, next) {
 
-        Event.findByIdAndDelete(req.params.id, (err, event) => {
+        Event.findByIdAndDelete(req.query._id, (err, event) => {
             if (err) next(err);
             return res.sendStatus(200);
         });
