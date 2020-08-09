@@ -38,7 +38,7 @@ export class CreateEventComponent implements OnInit {
       "startTime":startTime,
       "endTime":endTime
     }
-    var url="https://d9edc04fdbc6.ngrok.io/api/v1/event"
+    var url="http://localhost:4000/api/v1/event"
     
     let headers = new HttpHeaders({
       'Authorization': "JWT "+localStorage.getItem('accessToken'),

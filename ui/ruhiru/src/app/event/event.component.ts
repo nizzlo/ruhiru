@@ -27,7 +27,7 @@ export class EventComponent implements OnInit {
     this.getEvents();
   }
   private getEvents(){ //http get request.
-    var url = "https://d9edc04fdbc6.ngrok.io/api/v1/event";
+    var url = "http://localhost:4000/api/v1/event";
 
     this.http.get<event []>(url).subscribe(data =>{
       if(data!=null){

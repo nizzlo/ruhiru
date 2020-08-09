@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       "password": password
   }
 
-  var url="https://d9edc04fdbc6.ngrok.io/api/v1/user/login"
+  var url="http://localhost:4000/api/v1/user/login"
 
     this.http.post<any>(url,loginData).subscribe(data =>{
       //console.log(data);

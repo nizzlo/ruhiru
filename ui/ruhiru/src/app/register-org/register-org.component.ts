@@ -39,7 +39,7 @@ export class RegisterOrgComponent implements OnInit {
         "password":password
       }
       console.log(regData);
-      var url="https://d9edc04fdbc6.ngrok.io/api/v1/organization";
+      var url="http://localhost:4000/api/v1/organization";
 
       this.http.post<any>(url,regData).subscribe(data =>{
         console.log(data);
