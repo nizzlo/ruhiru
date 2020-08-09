@@ -10,6 +10,7 @@ interface event { //creates the car interface.
   endTime: boolean;
   createdAt: number;
   updatedAt: number;
+  _id:string;
  
 }
 @Component({
@@ -45,7 +46,7 @@ export class DeleteEventComponent implements OnInit {
   }
 
   deleteEvents(event){ //http get request.
-    var url = "https://d9edc04fdbc6.ngrok.io/api/v1/event/5f2ed0ad29e32705e515c7a0";
+    var url = "https://d9edc04fdbc6.ngrok.io/api/v1/event/";
 
     let headers = new HttpHeaders({
       'Authorization': "JWT "+localStorage.getItem('accessToken'),
@@ -57,16 +58,13 @@ export class DeleteEventComponent implements OnInit {
       "organizer":event.organizer,
       "description":event.description,
       "startTime":event.startTime,
-      "endTime":event.endTime
+      "endTime":event.endTime,
+      "_id":event._id
     }
 
     let httpParams = new HttpParams()
-    .set("name",event.name)
-    .set("location",event.location)
-    .set("organizer",event.organizer)
-    .set("description",event.description)
-    .set("startTime",event.startTime)
-    .set("endTime",event.endTime);
+    .set("_id",event._id)
+    
 
     let options = { headers: headers, params: httpParams};
 
