@@ -38,14 +38,12 @@ export class RegisterOrgComponent implements OnInit {
         "contact":contact,
         "password":password
       }
-      var url="https://d9edc04fdbc6.ngrok.io/api/v1/user/organization"
+      console.log(regData);
+      var url="https://d9edc04fdbc6.ngrok.io/api/v1/organization";
 
       this.http.post<any>(url,regData).subscribe(data =>{
         console.log(data);
       });
-    }
-    else{
-      alert("Password Mismatch");
     }
   }
 

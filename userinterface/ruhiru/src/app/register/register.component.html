@@ -1,12 +1,18 @@
 <H1>User Registration</H1>
 <br>
 <form [formGroup]="RegForm" (ngSubmit)="onSubmit()">
-    First Name :  <input type="text" formControlName="fName" required> <br>
-    Last Name :  <input type="text" formControlName="lName" required> <br>
-    Email :  <input type="email" formControlName="email" required> <br>
-    Contact No :  <input type="text" formControlName="ContactNo" required> <br> 
-    Password :  <input type="password" formControlName="Password1" required> <br>
-    Confirm Password :  <input type="password" formControlName="password2" (input)="onSearchChange($event.target.value)" id="test" required> <br>
+    <label style="font-weight:bold">First Name </label><br>
+    <input type="text" formControlName="fName" placeholder="Enter First Name" required> <br><br>
+    <label style="font-weight:bold">Last Name </label> <br>
+    <input type="text" formControlName="lName" placeholder="Enter First Name" required> <br><br>
+    <label style="font-weight:bold">Email </label><br>
+    <input type="email" formControlName="email" placeholder="Enter Email" required> <br><br>
+    <label style="font-weight:bold"> Contact No </label><br>
+    <input type="text" formControlName="ContactNo" placeholder="Enter Contact No" required> <br><br> 
+    <label style="font-weight:bold">Password </label><br>
+    <input type="password" formControlName="Password1" placeholder="Enter a password" required> <br><br>
+    <label style="font-weight:bold">Confirm Password </label><br>
+    <input type="password" formControlName="password2" (input)="onSearchChange($event.target.value)" id="test" placeholder="Confirm Password" required> <br><br><br><br>
     <input type="submit" id="submit" [disabled]="!RegForm.valid"> 
     <input type="Reset">
 </form>
