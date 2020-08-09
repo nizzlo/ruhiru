@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  backend:
+    container_name: ruhiru-backend
+    restart: unless-stopped
+    build:
+      context: api/
+      dockerfile: Dockerfile
+    ports: 
+      - 4000:4000
+
+  frontend:
+    container_name: ruhiru-frontend
+    build: 
+      context: ui/user-dashboard
+      dockerfile: Dockerfile
+    ports:
+      - 80:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    depends_on: 
+      - backend
+    stdin_open: true
