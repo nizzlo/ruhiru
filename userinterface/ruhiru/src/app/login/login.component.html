@@ -1,15 +1,22 @@
 
-<div class="loginform">
+
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem; position: relative;left: 0; bottom: 0; top:0; right: 0;  margin: auto; ">
+    <div class="card-header">Login</div>
+    <div class="card-body">
+      
+      <div class="loginform">
     
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-
-    <label>Email/Username:</label>
-    <input type="email" placeholder="your email here" formControlName="email" required>
-    <br/><br/>
-    <label>Password:</label>
-    <input type="password" placeholder="your email here" formControlName="password" required>
-    <br/>
-    <button type="submit" [disabled]="!loginForm.valid">Submit</button>
-
-    </form>
-</div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+        <label>Email/Username:</label>
+        <input type="email" placeholder="your email here" formControlName="email" required>
+        <br/><br/>
+        <label>Password:</label>
+        <input type="password" placeholder="your email here" formControlName="password" required>
+        <br/>
+        <button class="btn btn-light" type="submit" [disabled]="!loginForm.valid">Submit</button>
+    
+        </form>
+    </div>
+    </div>
+  </div>
