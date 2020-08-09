@@ -43,10 +43,8 @@ export class RegisterComponent implements OnInit {
 
       this.http.post<any>(url,regData).subscribe(data =>{
         console.log(data);
+        alert("Registration successful")
       });
-    }
-    else{
-      alert("Password Mismatch")
     }
   }
 
@@ -56,10 +54,12 @@ export class RegisterComponent implements OnInit {
   onSearchChange(searchValue: string): void {  
     if(searchValue == this.RegForm.get("Password1").value){
       document.getElementById("test").style.borderColor = "#EBE9ED";
+      var element = (<HTMLInputElement>document.getElementById("submit")).disabled = false;
       this.access = true;
     }
     else{
       document.getElementById("test").style.borderColor = "red";
+      var element = (<HTMLInputElement>document.getElementById("submit")).disabled = true;
     }
   }
 }

@@ -2,12 +2,18 @@
 
 <br>
 <form [formGroup]="EventForm" (ngSubmit)="onSubmit()">
-    Name :  <input type="text" formControlName="name"> <br>
-    Location :  <input type="text" formControlName="location"> <br>
-    Organizer :  <input type="email" formControlName="organizer"> <br>
-    Description :  <input type="text" formControlName="description"> <br> 
-    Start Time :  <input type="password" formControlName="startTime"> <br>
-    End Time :  <input type="password" formControlName="endTime"> <br>
+    <label style="font-weight:bold"> Name </label> <br>
+    <input type="text" formControlName="name"> <br> <br>
+    <label style="font-weight:bold"> Location </label> <br>
+    <input type="text" formControlName="location"> <br> <br>
+    <label style="font-weight:bold"> Organizer </label><br>
+    <input type="email" formControlName="organizer"> <br> <br>
+    <label style="font-weight:bold"> Description </label> <br>
+    <input type="text" formControlName="description"> <br> <br>
+    <label style="font-weight:bold"> Start Time </label> <br>
+    <input type="password" formControlName="startTime"> <br> <br>
+    <label style="font-weight:bold"> End Time </label> <br>
+    <input type="password" formControlName="endTime"> <br> <br>
  
     <input type="submit"> 
     <input type="Reset">
