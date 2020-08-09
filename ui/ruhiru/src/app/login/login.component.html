@@ -1,0 +1,57 @@
+
+
+<!-- <div class="card text-white bg-dark mb-3" style="max-width: 18rem; position: relative;left: 0; bottom: 0; top:0; right: 0;  margin: auto; ">
+    <div class="card-header">Login</div>
+    <div class="card-body">
+      
+      <div class="loginform">
+    
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+        <label>Email/Username:</label>
+        <input type="email" placeholder="your email here" formControlName="email" required>
+        <br/><br/>
+        <label>Password:</label>
+        <input type="password" placeholder="your email here" formControlName="password" required>
+        <br/>
+        <button class="btn btn-light" type="submit" [disabled]="!loginForm.valid">Submit</button>
+    
+        </form>
+    </div>
+    </div>
+  </div> -->
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <br/>
+      <H1>Organization/User Login</H1>
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+    <div class="loginform">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="fadeIn second">  <label>Email/Username:</label><br/>
+        <input   type="email" placeholder="your email here" formControlName="email" required></div>
+       
+        <br/><br/>
+        <div class="fadeIn third" name="login" ><label>Password:</label><br/>
+            <input type="password" placeholder="your password here" formControlName="password" required></div>
+        
+        <br/><div class="fadeIn fourth">
+            <button class="btn btn-light" type="submit" [disabled]="!loginForm.valid">Submit</button>
+        </div>
+        
+    
+        </form>
+    </div>
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+  
+    </div>
+  </div>

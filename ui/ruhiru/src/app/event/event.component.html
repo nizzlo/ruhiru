@@ -1,0 +1,49 @@
+
+
+<div class="tableArea">
+   <!-- <table>
+        <tr>
+                <th>name</th>
+                <th>location</th>
+                <th>organizer</th>
+                <th>description</th>
+                <th>startTime</th>
+                <th>endTime</th>
+                <th>createdAt</th>
+                <th>updatedAt</th>
+               
+                <th></th>   
+        </tr>
+        <ng-container *ngFor="let event of events">
+        <tr>
+                <td>{{event.name}}</td>
+                <td>{{event.location}}</td>
+                <td>{{event.organizer}}</td>
+                <td>{{event.description}}</td>
+                <td>{{event.startTime}}</td>
+                <td>{{event.endTime}}</td>
+                <td>{{event.createdAt}}</td>
+                <td>{{event.updatedAt}}</td>
+              
+        </tr>
+        </ng-container>
+        <caption *ngIf="events==null">Srry Could not fetch Events from server. Try again later :(</caption>
+   </table> -->
+   <div class="container">
+   <div class="row">
+   <ng-container *ngFor="let event of events">
+        <div class="col-6">
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://image.flaticon.com/icons/svg/1882/1882807.svg" alt="Card image cap">
+        <div class="card-body">
+          <h2 class="card-title">{{event.name}}</h2>
+          <p class="card-text">Organized by {{event.organizer}},<br/>Start Time: {{event.startTime}} End Time: {{event.endTime}}</p>
+          <a href="#" class="btn btn-primary">{{event.location}}</a>
+        </div>
+      </div>
+        </div>
+        </ng-container>
+</div>
+</div>
+</div>
+
