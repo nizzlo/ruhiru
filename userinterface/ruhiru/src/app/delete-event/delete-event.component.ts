@@ -79,8 +79,11 @@ export class DeleteEventComponent implements OnInit {
     }
     ,error=>{
       console.log(console.error(error));
-      console.log(JSON.stringify(httpParams.get("location")));
+      //console.log(JSON.stringify(httpParams.get("location")));
+      window.location.reload()
     });
+
+    
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-event',
   templateUrl: './create-event.component.html',
@@ -8,7 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class CreateEventComponent implements OnInit {
 
-  constructor(private http:HttpClient) { 
+  constructor(private http:HttpClient, private router: Router) { 
 
   }
 
@@ -47,7 +48,8 @@ export class CreateEventComponent implements OnInit {
 
 
     this.http.post<any>(url,eveData,options).subscribe(data =>{
-      console.log(data);
+      alert("Adding Event")
+      this.router.navigate(['/event']);
       
     },error=>{
       console.log(localStorage.getItem('accessToken'));
