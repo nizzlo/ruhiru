@@ -1,6 +1,4 @@
-<p>create-event works!</p>
 
-<br>
 <form [formGroup]="EventForm" (ngSubmit)="onSubmit()">
     <label style="font-weight:bold"> Name </label> <br>
     <input type="text" formControlName="name"> <br> <br>
@@ -11,9 +9,9 @@
     <label style="font-weight:bold"> Description </label> <br>
     <input type="text" formControlName="description"> <br> <br>
     <label style="font-weight:bold"> Start Time </label> <br>
-    <input type="password" formControlName="startTime"> <br> <br>
+    <input type="text" formControlName="startTime"> <br> <br>
     <label style="font-weight:bold"> End Time </label> <br>
-    <input type="password" formControlName="endTime"> <br> <br>
+    <input type="text" formControlName="endTime"> <br> <br>
  
     <input type="submit"> 
     <input type="Reset">

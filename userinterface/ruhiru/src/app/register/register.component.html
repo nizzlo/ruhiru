@@ -1,19 +1,32 @@
-<H1>User Registration</H1>
-<br>
-<form [formGroup]="RegForm" (ngSubmit)="onSubmit()">
-    <label style="font-weight:bold">First Name </label><br>
-    <input type="text" formControlName="fName" placeholder="Enter First Name" required> <br><br>
-    <label style="font-weight:bold">Last Name </label> <br>
-    <input type="text" formControlName="lName" placeholder="Enter First Name" required> <br><br>
-    <label style="font-weight:bold">Email </label><br>
-    <input type="email" formControlName="email" placeholder="Enter Email" required> <br><br>
-    <label style="font-weight:bold"> Contact No </label><br>
-    <input type="text" formControlName="ContactNo" placeholder="Enter Contact No" required> <br><br> 
-    <label style="font-weight:bold">Password </label><br>
-    <input type="password" formControlName="Password1" placeholder="Enter a password" required> <br><br>
-    <label style="font-weight:bold">Confirm Password </label><br>
-    <input type="password" formControlName="password2" (input)="onSearchChange($event.target.value)" id="test" placeholder="Confirm Password" required> <br><br><br><br>
-    <input type="submit" id="submit" [disabled]="!RegForm.valid"> 
-    <input type="Reset">
-</form>
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <br/>
+      <!-- Tabs Titles -->
+      <H1>User Registration</H1>
+      <br>      
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="data:image/png;base64,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" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form [formGroup]="RegForm" (ngSubmit)="onSubmit()">
+        <label style="font-weight:bold">First Name </label><br>
+        <input type="text" formControlName="fName" placeholder="Enter First Name" required> <br><br>
+        <label style="font-weight:bold">Last Name </label> <br>
+        <input type="text" formControlName="lName" placeholder="Enter First Name" required> <br><br>
+        <label style="font-weight:bold">Email </label><br>
+        <input type="email" formControlName="email" placeholder="Enter Email" required> <br><br>
+        <label style="font-weight:bold"> Contact No </label><br>
+        <input type="text" formControlName="ContactNo" placeholder="Enter Contact No" required> <br><br> 
+        <label style="font-weight:bold">Password </label><br>
+        <input type="password" formControlName="Password1" placeholder="Enter a password" required> <br><br>
+        <label style="font-weight:bold">Confirm Password </label><br>
+        <input type="password" formControlName="password2" (input)="onSearchChange($event.target.value)" id="test" placeholder="Confirm Password" required> <br><br><br><br>
+        <input type="submit" id="submit" [disabled]="!RegForm.valid"> 
+        <input type="Reset">
+    </form>
+</div>
+</div>    
 
