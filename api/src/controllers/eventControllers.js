@@ -6,10 +6,11 @@ module.exports = {
 
         req.body.createdBy = req.user.id; 
         const newEvent = new Event(req.body);
-        newEvent.save((err, event) => {
-            if (err) next(err);
-            return res.status(201).json(event);
-        });
+        return res.json(req.file.originalname);
+        // newEvent.save((err, event) => {
+        //     if (err) next(err);
+        //     return res.status(201).json(event);
+        // });
     },
 
     listEvent: function(req, res, next) {

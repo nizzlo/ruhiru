@@ -33,6 +33,7 @@ app.get('/', (req,res)=>{
 });
 
 // public routes
+app.use(express.static('public'));
 app.use('/api/v1/', user);
 app.use('/api/v1/', event);
 app.use('/api/v1/', org);

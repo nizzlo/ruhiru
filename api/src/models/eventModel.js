@@ -28,6 +28,10 @@ const EventSchema = mongoose.Schema({
     createdBy: {
         type: String,
         required:true
+    },
+    cover: {
+        type: String,
+        default:'cover.jpg'
     }
 }, { timestamps: true });
 
