@@ -17,14 +17,18 @@ module.exports = {
 
     listEvent: function(req, res, next) {
 
-        Event.find((err, events) => {
-            if (err) next(err);
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
 
-            events.forEach( event => {
+        Event.paginate({}, { page:page, limit:limit}, (err, events) => {
+
+            if (err) next(err.message);
+
+            events.docs.forEach(event => {
                 event.cover = process.env.HOST_PATH+event.cover;
             })
             return res.json(events);
-        });
+        })
     },
 
     filterEvent: function(req, res, next) {
