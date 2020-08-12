@@ -31,7 +31,7 @@ const EventSchema = mongoose.Schema({
     },
     cover: {
         type: String,
-        default:'cover.jpg'
+        default:'39690882-49cf-4119-8d35-36972daad5bb.jpg'
     }
 }, { timestamps: true });
 

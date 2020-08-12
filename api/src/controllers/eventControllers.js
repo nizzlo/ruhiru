@@ -6,18 +6,24 @@ module.exports = {
 
         req.body.createdBy = req.user.id; 
         const newEvent = new Event(req.body);
-        return res.json(req.file.originalname);
-        // newEvent.save((err, event) => {
-        //     if (err) next(err);
-        //     return res.status(201).json(event);
-        // });
+        if (req.file !== undefined) {
+            newEvent.cover = req.file.filename;
+        }
+        newEvent.save((err, event) => {
+            if (err) next(err);
+            return res.status(201).json(event);
+        });
     },
 
     listEvent: function(req, res, next) {
 
-        Event.find((err, event) => {
+        Event.find((err, events) => {
             if (err) next(err);
-            return res.json(event);
+
+            events.forEach( event => {
+                event.cover = process.env.HOST_PATH+event.cover;
+            })
+            return res.json(events);
         });
     },
 
