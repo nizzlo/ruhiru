@@ -1,6 +1,6 @@
 # Ruhiru
 
-A web and mobile application for efficient blood donation
+A web and mobile application for efficient blood donation. This is for a startup competition called one hack.
 
 ## Prerequisites
 
